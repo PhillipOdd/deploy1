@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog Platform</title>
+</head>
+<body>
+    <h1>Welcome to the Blog</h1>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{{ url_for('post', id=post.id) }}">{{ post.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('create') }}">Create a New Post</a>
+</body>
+</html>
